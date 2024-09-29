@@ -1,2 +1,9 @@
 # Talento-Tech-Proyecto-Notas
-First express app with mongo
+
+## Comandos Docker
+
+### crear la imagen
+
+```bash
+    docker compose up
+```

@@ -10,8 +10,6 @@ exports.obtenerEstudiantes = async (req,res) =>{
 }
 
 exports.crearEstudiante = async (req,res)=>{
-    console.log("crear estudiante", req.body)
-
     try{
         const nuevoEstudiante = new Estudiante(req.body)
         await nuevoEstudiante.save()

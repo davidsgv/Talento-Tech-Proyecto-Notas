@@ -14,12 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(()=> console.log("Base de datos conectada"))
+    // .then(()=> console.log("Base de datos conectada"))
     .catch(err => console.error("No se pudo conectar a Mongo: ", err));
 
 app.use("/api/estudiantes", jwtMiddleware, estudianteRouter);
 app.use("/api/materias", jwtMiddleware, materiaRouter);
 app.use("/api/auth", authRouter);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, ()=> console.log(`Servidor corriendo en el puerto ${PORT}`))
+module.exports = app;
